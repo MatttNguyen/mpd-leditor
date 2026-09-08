@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c8u2210do1w3r"]
+
+[ext_resource type="PackedScene" uid="uid://dc4f8stkkpfgv" path="res://scenes/tile.tscn" id="1_yl5ti"]
+[ext_resource type="PackedScene" uid="uid://bm0yxmeh6ge2h" path="res://scenes/select_tile.tscn" id="2_a8lfm"]
+
+[node name="PaletteTile" type="Control" unique_id=1411190275]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 132.0
+
+[node name="Tile" parent="." unique_id=6304644 instance=ExtResource("1_yl5ti")]
+position = Vector2(66, 66)
+scale = Vector2(3.5, 3.5)
+
+[node name="select_tile" parent="." unique_id=2111999811 instance=ExtResource("2_a8lfm")]
+position = Vector2(66, 66)
+scale = Vector2(3.5, 3.5)

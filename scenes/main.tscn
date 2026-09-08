@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://curr2xnqbn08q"]
+
+[ext_resource type="Script" uid="uid://nwpij6jwwiig" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dgwfjbhaaafvg" path="res://scripts/camera.gd" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bvxe84h1vw2g5" path="res://scenes/menu.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://b7b5ukp6saxvb" path="res://scenes/palette.tscn" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://bsqusvhjntx46" path="res://assets/cw_rot.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://y2tcmbqmhwwf" path="res://assets/ccw_rot.png" id="6_o6xl0"]
+
+[node name="Main" type="Node2D" unique_id=721347162]
+script = ExtResource("1_o5qli")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1858747996]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=708544715]
+position = Vector2(499, 360)
+script = ExtResource("2_0wfyh")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=31857513]
+
+[node name="Save" type="Button" parent="UI" unique_id=1553944114]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 30
+text = "Save"
+
+[node name="SaveAs" type="Button" parent="UI" unique_id=1288337538]
+offset_left = 105.0
+offset_top = 19.0
+offset_right = 245.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 30
+text = "Save as..."
+
+[node name="Open" type="Button" parent="UI" unique_id=1092295169]
+offset_left = 255.0
+offset_top = 19.0
+offset_right = 342.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 30
+text = "Open"
+
+[node name="EditTile" type="Button" parent="UI" unique_id=1233317424]
+offset_left = 1707.0
+offset_top = 19.0
+offset_right = 1898.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 50
+text = "Edit tile"
+
+[node name="Deselect" type="Button" parent="UI" unique_id=323092789]
+offset_left = 1685.0
+offset_top = 119.0
+offset_right = 1899.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 50
+text = "Deselect"
+
+[node name="Menu" parent="UI" unique_id=1007746143 instance=ExtResource("3_sugp2")]
+visible = false
+
+[node name="Palette" parent="UI" unique_id=2005189027 instance=ExtResource("4_jyhfs")]
+offset_top = 908.0
+offset_bottom = 1080.0
+
+[node name="Width" type="SpinBox" parent="UI" unique_id=1328862894]
+offset_left = 19.000122
+offset_top = 97.0
+offset_right = 105.50012
+offset_bottom = 128.0
+scale = Vector2(2, 2)
+max_value = 255.0
+
+[node name="Height" type="SpinBox" parent="UI" unique_id=433459821]
+offset_left = 213.0
+offset_top = 97.0
+offset_right = 299.5
+offset_bottom = 128.0
+scale = Vector2(2, 2)
+max_value = 255.0
+
+[node name="UpdateSize" type="Button" parent="UI" unique_id=646496999]
+offset_left = 19.0
+offset_top = 171.0
+offset_right = 309.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 50
+text = "Update size"
+
+[node name="CWRot" type="Button" parent="UI" unique_id=1545248700]
+offset_left = 1779.0
+offset_top = 215.0
+offset_right = 1899.0
+offset_bottom = 335.0
+icon = ExtResource("5_tefeu")
+expand_icon = true
+
+[node name="CCWRot" type="Button" parent="UI" unique_id=212591957]
+offset_left = 1647.0
+offset_top = 215.0
+offset_right = 1767.0
+offset_bottom = 335.0
+icon = ExtResource("6_o6xl0")
+expand_icon = true
+
+[node name="SaveFile" type="FileDialog" parent="." unique_id=1397329295]
+access = 2
+filters = PackedStringArray("*.mxw")
+use_native_dialog = true
+
+[node name="OpenFile" type="FileDialog" parent="." unique_id=932401032]
+title = "Open a File"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.mxw")
+use_native_dialog = true
+
+[connection signal="pressed" from="UI/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="UI/SaveAs" to="." method="_on_save_as_pressed"]
+[connection signal="pressed" from="UI/Open" to="." method="_on_open_pressed"]
+[connection signal="pressed" from="UI/EditTile" to="." method="_on_edit_tile_pressed"]
+[connection signal="pressed" from="UI/Deselect" to="." method="_on_deselect_pressed"]
+[connection signal="close_menu" from="UI/Menu" to="." method="_on_menu_close_menu"]
+[connection signal="pressed" from="UI/UpdateSize" to="." method="update_size"]
+[connection signal="pressed" from="UI/CWRot" to="." method="_on_cw_rot_pressed"]
+[connection signal="pressed" from="UI/CCWRot" to="." method="_on_ccw_rot_pressed"]
+[connection signal="file_selected" from="SaveFile" to="." method="_on_save_file_file_selected"]
+[connection signal="file_selected" from="OpenFile" to="." method="_on_open_file_file_selected"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bm0yxmeh6ge2h"]
+
+[ext_resource type="Texture2D" uid="uid://dftc03osca5hi" path="res://assets/selected.png" id="1_ur51u"]
+[ext_resource type="Script" uid="uid://d20g7ju27ebfw" path="res://scripts/select_tile.gd" id="1_uub8x"]
+
+[node name="select_tile" type="Node2D" unique_id=2111999811]
+script = ExtResource("1_uub8x")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=247822108]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1605469599]
+visible = false
+texture = ExtResource("1_ur51u")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_click"]

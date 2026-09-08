@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b7b5ukp6saxvb"]
+
+[ext_resource type="Script" uid="uid://d3u8wnq26euwd" path="res://scripts/palette.gd" id="1_r4yp3"]
+
+[node name="Palette" type="Control" unique_id=2005189027]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 204.0
+script = ExtResource("1_r4yp3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1597533401]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 172.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=413633721]
+layout_mode = 0
+offset_right = 1835.0
+offset_bottom = 172.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer" unique_id=1475658118]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/ScrollContainer" unique_id=1039295642]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Add" type="Button" parent="Panel" unique_id=225659357]
+layout_mode = 0
+offset_left = 1835.0
+offset_top = 1.0
+offset_right = 1919.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 20
+text = "Add"
+
+[node name="Remove" type="Button" parent="Panel" unique_id=2077807849]
+layout_mode = 0
+offset_left = 1835.0
+offset_top = 87.0
+offset_right = 1919.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 20
+text = "Delete"
+
+[connection signal="pressed" from="Panel/Add" to="." method="add_tile"]
+[connection signal="pressed" from="Panel/Remove" to="." method="remove_tile"]

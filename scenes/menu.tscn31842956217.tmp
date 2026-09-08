@@ -1,0 +1,328 @@
+[gd_scene format=3 uid="uid://bvxe84h1vw2g5"]
+
+[ext_resource type="Script" uid="uid://dny3emxotyltt" path="res://scripts/menu.gd" id="1_con2f"]
+[ext_resource type="PackedScene" uid="uid://dc4f8stkkpfgv" path="res://scenes/tile.tscn" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://wy1qlvkkcmq6" path="res://assets/arrow_right.png" id="2_vjb58"]
+
+[node name="Menu" type="Control" unique_id=1007746143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_con2f")
+
+[node name="Panel" type="Panel" parent="." unique_id=1629512649]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Tile" parent="Panel" unique_id=1006119231 instance=ExtResource("1_yqeox")]
+position = Vector2(758, 502)
+
+[node name="BlockControl" type="Control" parent="Panel" unique_id=641916215]
+anchors_preset = 0
+
+[node name="EdgeRight" type="OptionButton" parent="Panel/BlockControl" unique_id=1193402387]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 439.0
+offset_right = 1124.0
+offset_bottom = 470.0
+scale = Vector2(2.5, 2.5)
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Sticky"
+popup/item_0/id = 0
+popup/item_1/text = "Conductive"
+popup/item_1/id = 1
+popup/item_2/text = "Insulating"
+popup/item_2/id = 2
+
+[node name="EdgeUp" type="OptionButton" parent="Panel/BlockControl" unique_id=80981222]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 193.0
+offset_right = 705.0
+offset_bottom = 224.0
+scale = Vector2(2.5, 2.5)
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Sticky"
+popup/item_0/id = 0
+popup/item_1/text = "Conductive"
+popup/item_1/id = 1
+popup/item_2/text = "Insulating"
+popup/item_2/id = 2
+
+[node name="EdgeLeft" type="OptionButton" parent="Panel/BlockControl" unique_id=197421889]
+layout_mode = 0
+offset_left = 212.99998
+offset_top = 454.0
+offset_right = 340.0
+offset_bottom = 485.0
+scale = Vector2(2.5, 2.5)
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Sticky"
+popup/item_0/id = 0
+popup/item_1/text = "Conductive"
+popup/item_1/id = 1
+popup/item_2/text = "Insulating"
+popup/item_2/id = 2
+
+[node name="EdgeDown" type="OptionButton" parent="Panel/BlockControl" unique_id=2958256]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 681.0
+offset_right = 705.0
+offset_bottom = 712.0
+scale = Vector2(2.5, 2.5)
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Sticky"
+popup/item_0/id = 0
+popup/item_1/text = "Conductive"
+popup/item_1/id = 1
+popup/item_2/text = "Insulating"
+popup/item_2/id = 2
+
+[node name="Temperature" type="OptionButton" parent="Panel/BlockControl" unique_id=1559381461]
+layout_mode = 0
+offset_left = 212.99998
+offset_top = 193.0
+offset_right = 340.0
+offset_bottom = 224.0
+scale = Vector2(2.5, 2.5)
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Neutral"
+popup/item_0/id = 0
+popup/item_1/text = "Hot"
+popup/item_1/id = 1
+popup/item_2/text = "Cold"
+popup/item_2/id = 2
+popup/item_3/text = "Green"
+popup/item_3/id = 3
+
+[node name="Fixed" type="CheckButton" parent="Panel/BlockControl" unique_id=31521930]
+texture_filter = 1
+layout_mode = 0
+offset_left = 185.0
+offset_top = 914.0
+offset_right = 289.0
+offset_bottom = 945.0
+scale = Vector2(4, 4)
+action_mode = 0
+text = "Fixed
+"
+icon_alignment = 2
+expand_icon = true
+
+[node name="Glass" type="CheckButton" parent="Panel/BlockControl" unique_id=1256657441]
+texture_filter = 1
+layout_mode = 0
+offset_left = 595.0
+offset_top = 914.0
+offset_right = 699.0
+offset_bottom = 945.0
+scale = Vector2(4, 4)
+action_mode = 0
+text = "Glass"
+icon_alignment = 2
+expand_icon = true
+
+[node name="LevelControl" type="Control" parent="Panel" unique_id=338635926]
+visible = false
+anchors_preset = 0
+
+[node name="LevelID" type="LineEdit" parent="Panel/LevelControl" unique_id=550687070]
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 347.0
+offset_right = 1504.0
+offset_bottom = 378.0
+scale = Vector2(2.5, 2.5)
+placeholder_text = "Level ID"
+emoji_menu_enabled = false
+virtual_keyboard_enabled = false
+caret_blink = true
+caret_force_displayed = true
+
+[node name="LevelShortcut" type="CheckButton" parent="Panel/LevelControl" unique_id=1019005887]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 235.0
+offset_right = 1442.0
+offset_bottom = 266.0
+scale = Vector2(3, 3)
+action_mode = 0
+text = "Shortcut
+"
+icon_alignment = 2
+expand_icon = true
+
+[node name="BeforeAfter" type="CheckButton" parent="Panel/LevelControl" unique_id=80560690]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 444.0
+offset_right = 1472.0
+offset_bottom = 475.0
+scale = Vector2(3, 3)
+action_mode = 0
+text = "Before/After"
+icon_alignment = 2
+expand_icon = true
+
+[node name="PistonControl" type="Control" parent="Panel" unique_id=577378827]
+visible = false
+anchors_preset = 0
+
+[node name="Extended" type="CheckButton" parent="Panel/PistonControl" unique_id=1331915698]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 235.0
+offset_right = 1448.0
+offset_bottom = 266.0
+scale = Vector2(3, 3)
+action_mode = 0
+text = "Extended
+"
+icon_alignment = 2
+expand_icon = true
+
+[node name="Direction" type="OptionButton" parent="Panel/PistonControl" unique_id=665029086]
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 347.0
+offset_right = 1458.0
+offset_bottom = 378.0
+scale = Vector2(2.5, 2.5)
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Up"
+popup/item_0/id = 0
+popup/item_1/text = "Left"
+popup/item_1/id = 1
+popup/item_2/text = "Down"
+popup/item_2/id = 2
+popup/item_3/text = "Right"
+popup/item_3/id = 3
+
+[node name="Priority" type="SpinBox" parent="Panel/PistonControl" unique_id=102082805]
+layout_mode = 0
+offset_left = 1327.0001
+offset_top = 467.00003
+offset_right = 1462.0001
+offset_bottom = 509.00003
+scale = Vector2(2.5, 2.5)
+min_value = 1.0
+max_value = 256.0
+value = 1.0
+alignment = 1
+prefix = "#"
+
+[node name="MultiControl" type="Control" parent="Panel" unique_id=156433622]
+visible = false
+anchors_preset = 0
+
+[node name="Value" type="SpinBox" parent="Panel/MultiControl" unique_id=1411047812]
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 328.0
+offset_right = 1433.0
+offset_bottom = 359.0
+scale = Vector2(2.5, 2.5)
+max_value = 65535.0
+prefix = "*"
+
+[node name="Type" type="OptionButton" parent="Panel" unique_id=1619641167]
+layout_mode = 0
+offset_left = 1327.0
+offset_top = 100.0
+offset_right = 1458.0
+offset_bottom = 131.0
+scale = Vector2(3, 3)
+selected = 0
+allow_reselect = true
+item_count = 6
+popup/item_0/text = "Empty"
+popup/item_0/id = 0
+popup/item_1/text = "Player Start"
+popup/item_1/id = 1
+popup/item_2/text = "Block"
+popup/item_2/id = 2
+popup/item_3/text = "Level"
+popup/item_3/id = 3
+popup/item_4/text = "Piston"
+popup/item_4/id = 4
+popup/item_5/text = "Multiblock"
+popup/item_5/id = 5
+
+[node name="NextLayer" type="TextureButton" parent="Panel" unique_id=1076183918]
+visible = false
+layout_mode = 0
+offset_left = 1732.0
+offset_top = 467.0
+offset_right = 1912.0
+offset_bottom = 654.0
+texture_normal = ExtResource("2_vjb58")
+stretch_mode = 4
+
+[node name="PrevLayer" type="TextureButton" parent="Panel" unique_id=1260620801]
+layout_mode = 0
+offset_top = 444.0
+offset_right = 185.0
+offset_bottom = 626.0
+texture_normal = ExtResource("2_vjb58")
+stretch_mode = 4
+flip_h = true
+
+[node name="Save" type="Button" parent="Panel" unique_id=5055839]
+layout_mode = 0
+offset_left = 1732.0
+offset_top = 928.0
+offset_right = 1853.0
+offset_bottom = 1006.0
+theme_override_font_sizes/font_size = 50
+text = "Save"
+
+[node name="Cancel" type="Button" parent="Panel" unique_id=169189402]
+layout_mode = 0
+offset_left = 1549.0
+offset_top = 928.0
+offset_right = 1718.0
+offset_bottom = 1006.0
+theme_override_font_sizes/font_size = 50
+text = "Cancel"
+
+[connection signal="item_selected" from="Panel/BlockControl/EdgeRight" to="." method="select_signal"]
+[connection signal="item_selected" from="Panel/BlockControl/EdgeUp" to="." method="select_signal"]
+[connection signal="item_selected" from="Panel/BlockControl/EdgeLeft" to="." method="select_signal"]
+[connection signal="item_selected" from="Panel/BlockControl/EdgeDown" to="." method="select_signal"]
+[connection signal="item_selected" from="Panel/BlockControl/Temperature" to="." method="select_signal"]
+[connection signal="pressed" from="Panel/BlockControl/Fixed" to="." method="update_to_dat"]
+[connection signal="pressed" from="Panel/BlockControl/Glass" to="." method="update_to_dat"]
+[connection signal="text_submitted" from="Panel/LevelControl/LevelID" to="." method="text_signal"]
+[connection signal="pressed" from="Panel/LevelControl/LevelShortcut" to="." method="update_to_dat"]
+[connection signal="pressed" from="Panel/LevelControl/BeforeAfter" to="." method="before_after"]
+[connection signal="pressed" from="Panel/PistonControl/Extended" to="." method="update_to_dat"]
+[connection signal="item_selected" from="Panel/PistonControl/Direction" to="." method="select_signal"]
+[connection signal="value_changed" from="Panel/PistonControl/Priority" to="." method="val_signal"]
+[connection signal="value_changed" from="Panel/MultiControl/Value" to="." method="val_signal"]
+[connection signal="item_selected" from="Panel/Type" to="." method="select_signal"]
+[connection signal="pressed" from="Panel/NextLayer" to="." method="next_layer"]
+[connection signal="pressed" from="Panel/PrevLayer" to="." method="prev_layer"]
+[connection signal="pressed" from="Panel/Save" to="." method="save_tile"]
+[connection signal="pressed" from="Panel/Cancel" to="." method="cancel"]

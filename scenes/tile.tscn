@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dc4f8stkkpfgv"]
+
+[ext_resource type="Script" uid="uid://c21v6irrxfsw0" path="res://scripts/tile.gd" id="1_3dk36"]
+[ext_resource type="PackedScene" uid="uid://2a4ymmy7cuje" path="res://scenes/block.tscn" id="2_ywnoi"]
+
+[node name="Tile" type="Node2D" unique_id=6304644]
+script = ExtResource("1_3dk36")
+
+[node name="Main" parent="." unique_id=2111080734 instance=ExtResource("2_ywnoi")]
+visible = false
+
+[node name="Level_After" parent="." unique_id=1702718209 instance=ExtResource("2_ywnoi")]
+visible = false
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=273532229]
+
+[node name="Label" type="Label" parent="." unique_id=1751250012]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2" type="Sprite2D" parent="." unique_id=627911516]
+
+[node name="Label2" type="Label" parent="." unique_id=94245565]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1

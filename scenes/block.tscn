@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://2a4ymmy7cuje"]
+
+[ext_resource type="Script" uid="uid://dvg7vwasuuxdl" path="res://scripts/block.gd" id="1_8r6n6"]
+
+[node name="Block" type="Node2D" unique_id=2111080734]
+script = ExtResource("1_8r6n6")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1637173978]
+texture_filter = 1
+
+[node name="Fixed" type="Sprite2D" parent="." unique_id=932921952]
+texture_filter = 1
+
+[node name="Edge_Up" type="Sprite2D" parent="." unique_id=1811505700]
+texture_filter = 1
+
+[node name="Edge_Down" type="Sprite2D" parent="." unique_id=1384861890]
+texture_filter = 1
+
+[node name="Edge_Left" type="Sprite2D" parent="." unique_id=763188697]
+texture_filter = 1
+
+[node name="Edge_Right" type="Sprite2D" parent="." unique_id=2011385655]
+texture_filter = 1
